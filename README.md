@@ -14,4 +14,16 @@ docker run -ti kartoza/mergin-client
 
 Cloning into a shared volume:
 
-docker run -ti -v ${PWD}/projects:/home/mergin/projects -e MERGIN_AUTH=XXXXX kartoza/mergin-client clone cvaz/teste_cvaz /home/mergin/projects/
+docker run -ti -v ${PWD}/projects:/home/mergin/projects -e MERGIN_USER=XXXXX -e MERGIN_PASSWORD=XXXXX kartoza/mergin-client clone tim1/GloriusProjectOfMagnificence /home/mergin/projects/
+
+Using docker compose:
+
+There is a small example docker-compose provided in this repo. To use, first
+copy .env.example to .env and update the .env file with your credentials.
+
+# Initial download of a project (edit docker compose to specify which)
+docker-compose run download-project
+
+# Pull changes to project
+docker-compose run pull-project
+
