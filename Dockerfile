@@ -12,5 +12,7 @@ COPY mergin.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/mergin.sh
 RUN useradd --create-home --shell /bin/bash mergin
 WORKDIR /home/mergin
-USER mergin
+# Enable this once file permissions issue with scp container is resolved
+#USER mergin
+USER 1006
 ENTRYPOINT ["mergin.sh"]
