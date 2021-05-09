@@ -25,5 +25,13 @@ copy .env.example to .env and update the .env file with your credentials.
 docker-compose run download-project
 
 # Pull changes to project
-docker-compose run pull-project
+docker-compose run pull-projects
+
+# List all projects shared with you
+docker-compose run list-shared-projects
+
+# Download all projects shared with you
+download-shared-projects
+
+
 

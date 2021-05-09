@@ -19,7 +19,7 @@ services:
     volumes:
       - qgis_projects:/home/mergin
 
-  pull-project:
+  pull-projects:
     image: *mergin-client-image
     env_file: .env
     environment:
@@ -27,5 +27,27 @@ services:
       - MERGIN_USER=${MERGIN_USER}
       - MERGIN_PASSWORD=${MERGIN_PASSWORD}
     command: "pull"
+    volumes:
+      - qgis_projects:/home/mergin
+
+  list-shared-projects:
+    image: *mergin-client-image
+    env_file: .env
+    environment:
+      - MERGIN_URL=${MERGIN_URL}
+      - MERGIN_USER=${MERGIN_USER}
+      - MERGIN_PASSWORD=${MERGIN_PASSWORD}
+    command: "list-projects --flag shared"
+    volumes:
+      - qgis_projects:/home/mergin
+
+  download-shared-projects:
+    image: *mergin-client-image
+    env_file: .env
+    environment:
+      - MERGIN_URL=${MERGIN_URL}
+      - MERGIN_USER=${MERGIN_USER}
+      - MERGIN_PASSWORD=${MERGIN_PASSWORD}
+    command: "download-shared"
     volumes:
       - qgis_projects:/home/mergin
