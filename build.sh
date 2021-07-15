@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t kartoza/mergin-client:latest .
+docker build --no-cache -t kartoza/mergin-client:latest .

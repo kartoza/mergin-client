@@ -34,4 +34,6 @@ fi
 # If none of the special cases above match, delegate the arguments
 # to the normal mergin command, passing along any args
 # Allow for variable numbers of arguments to be passed on to mergin
-mergin $1 $2 $3 $4 $5 $6
+# $@ passes all positional params to the command
+# See /usr/src/geonode/entrypoint.sh
+mergin $@
